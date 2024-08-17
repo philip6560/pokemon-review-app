@@ -24,5 +24,10 @@ namespace PokemonReviewApp.Data
         public DbSet<PokemonCategory> PokemonCategories { get; set; }
 
         public DbSet<PokemonOwner> PokemonOwners { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder) {
+            builder.ApplyConfigurationsFromAssembly(typeof(DataContext).Assembly);
+            base.OnModelCreating(builder);
+        }
     }
 }
