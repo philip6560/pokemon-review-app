@@ -25,12 +25,12 @@ namespace PokemonReviewApp.Repository
                 .FirstOrDefault();
         }
 
-        public decimal GetPokemonRating(int id)
+        public decimal? GetPokemonRating(int id)
         {
             var reviews = _context.Reviews.Where(r => r.Pokemon.Id == id);
 
             if(reviews.Count() <= 0)
-                return 0;
+                return null;
 
             return ((decimal)reviews.Sum(r => r.Rating) / reviews.Count());
         }

@@ -11,7 +11,7 @@ namespace PokemonReviewApp.Interfaces
 
         public Pokemon? GetPokemon(String name);
         
-        public decimal GetPokemonRating(int id);
+        public decimal? GetPokemonRating(int id);
 
         public bool PokemonExist(int id);
         
